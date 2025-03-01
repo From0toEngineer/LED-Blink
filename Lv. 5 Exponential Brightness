@@ -1,0 +1,17 @@
+#include <math.h>
+
+const int ledPin = 3;  // LED connected to PWM pin 6
+
+void setup() {
+    pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+    for (int y = 0; y <= 40; y++) {  //as y increases, the dimmer it will get. At y <= 40, it just barely stays lit. Any higher number will turn it off.
+        int brightness = (255 * exp(-y / 10.0));  // Exponential decay formula
+
+        analogWrite(ledPin, brightness);  // Set LED brightness using PWM
+        delay(100);  // Adjust delay for speed of dimming
+    }
+
+}
