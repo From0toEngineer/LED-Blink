@@ -1,0 +1,94 @@
+#include <math.h>
+
+const int ledPin = 3;  // LED connected to PWM pin 6
+
+void setup() {
+    pinMode(ledPin, OUTPUT);
+
+}
+
+void loop() {
+
+  int a = 2;
+    for (int x = 0; x <= 1300;) {  //as y increases, the dimmer it will get. At y <= 40, it just barely stays lit. Any higher number will turn it off.
+        double brightness = 255 + (-.090 * x);  // Exponential decay formula
+
+        analogWrite(ledPin, brightness);  // Set LED brightness using PWM
+        delay(a);  // Adjust delay for speed of dimming
+        x = x + 1;
+    }
+
+    for (int x = 1300; x <= 1800;) {  //as y increases, the dimmer it will get. At y <= 40, it just barely stays lit. Any higher number will turn it off.
+        double brightness = (.124 * x) - 23.2;  // Exponential decay formula
+
+        analogWrite(ledPin, brightness);  // Set LED brightness using PWM
+        delay(a);  // Adjust delay for speed of dimming
+        x = x + 1;
+    }
+
+    for (int x = 1800; x <= 2900;) {  //as y increases, the dimmer it will get. At y <= 40, it just barely stays lit. Any higher number will turn it off.
+        double brightness = 363.636363636363 - (.090909090909091 * x);  // Exponential decay formula
+
+        analogWrite(ledPin, brightness);  // Set LED brightness using PWM
+        delay(a);  // Adjust delay for speed of dimming
+        x = x + 1;
+    }
+
+    for (int x = 2900; x <= 3150;) {  //as y increases, the dimmer it will get. At y <= 40, it just barely stays lit. Any higher number will turn it off.
+        double brightness = (.128 * x) - 271.2;  // Exponential decay formula
+
+        analogWrite(ledPin, brightness);  // Set LED brightness using PWM
+        delay(a);  // Adjust delay for speed of dimming
+        x = x + 1;
+    }
+
+    for (int x = 3150; x <= 3950;) {  //as y increases, the dimmer it will get. At y <= 40, it just barely stays lit. Any higher number will turn it off.
+        double brightness = 427.956 - (.10824 * x);  // Exponential decay formula
+
+        analogWrite(ledPin, brightness);  // Set LED brightness using PWM
+        delay(a);  // Adjust delay for speed of dimming
+        x = x + 1;
+    }
+
+        for (int x = 4000; x <= 4850;) {  //as y increases, the dimmer it will get. At y <= 40, it just barely stays lit. Any higher number will turn it off.
+        double brightness = (.10823 * x) - 392.92;  // Exponential decay formula
+
+        analogWrite(ledPin, brightness);  // Set LED brightness using PWM
+        delay(a);  // Adjust delay for speed of dimming
+        x = x + 1;
+    }
+
+    for (int x = 4850; x <= 5100;) {  //as y increases, the dimmer it will get. At y <= 40, it just barely stays lit. Any higher number will turn it off.
+        double brightness = 752.8 - (.128 * x);  // Exponential decay formula
+
+        analogWrite(ledPin, brightness);  // Set LED brightness using PWM
+        delay(a);  // Adjust delay for speed of dimming
+        x = x + 1;
+    }
+
+    for (int x = 5100; x <= 6200;) {  //as y increases, the dimmer it will get. At y <= 40, it just barely stays lit. Any higher number will turn it off.
+        double brightness = (.09090909090909 * x) - 363.636363636363;  // Exponential decay formula
+
+        analogWrite(ledPin, brightness);  // Set LED brightness using PWM
+        delay(a);  // Adjust delay for speed of dimming
+        x = x + 1;
+    }
+
+    for (int x = 6200; x <= 6700;) {  //as y increases, the dimmer it will get. At y <= 40, it just barely stays lit. Any higher number will turn it off.
+        double brightness = (-.124 * x) + 968.8;  // Exponential decay formula
+
+        analogWrite(ledPin, brightness);  // Set LED brightness using PWM
+        delay(a);  // Adjust delay for speed of dimming
+        x = x + 1;
+    }
+
+    for (int x = 6700; x <= 8000;) {  //as y increases, the dimmer it will get. At y <= 40, it just barely stays lit. Any higher number will turn it off.
+        double brightness = (.09 * x) - 465;  // Exponential decay formula
+
+        analogWrite(ledPin, brightness);  // Set LED brightness using PWM
+        delay(a);  // Adjust delay for speed of dimming
+        x = x + 1;
+    }
+    
+
+}
