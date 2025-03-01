@@ -1,0 +1,56 @@
+#include <math.h>
+
+const int ledPin = 3;  // LED connected to PWM pin 6
+
+void setup() {
+    pinMode(ledPin, OUTPUT);
+
+}
+
+void loop() {
+
+  int a = 5;
+  int b = 1000;
+  
+    for (int x = 0; x <= 1000;) {  //as y increases, the dimmer it will get. At y <= 40, it just barely stays lit. Any higher number will turn it off.
+        double brightness = (-.000816 * x * x) + (.816 * x);  // Exponential decay formula
+
+        analogWrite(ledPin, brightness);  // Set LED brightness using PWM
+        delay(a);  // Adjust delay for speed of dimming
+        x = x + 1;
+    }
+
+delay(b);
+
+    for (int x = 1000; x <= 2000;) {  //as y increases, the dimmer it will get. At y <= 40, it just barely stays lit. Any higher number will turn it off.
+        double brightness = (-.000612 * x * x) + (1.836 * x) - 1224;  // Exponential decay formula
+
+        analogWrite(ledPin, brightness);  // Set LED brightness using PWM
+        delay(a);  // Adjust delay for speed of dimming
+        x = x + 1;
+    }
+
+delay(b);
+
+    for (int x = 2000; x <= 3000;) {  //as y increases, the dimmer it will get. At y <= 40, it just barely stays lit. Any higher number will turn it off.
+        double brightness = (-.000408 * x * x) + (2.04 * x) - 2448;  // Exponential decay formula
+
+        analogWrite(ledPin, brightness);  // Set LED brightness using PWM
+        delay(a);  // Adjust delay for speed of dimming
+        x = x + 1;
+    }
+
+delay(b);
+
+    for (int x = 3000; x <= 4000;) {  //as y increases, the dimmer it will get. At y <= 40, it just barely stays lit. Any higher number will turn it off.
+        double brightness = (-.000204 * x * x) + (1.428 * x) - 2448;  // Exponential decay formula
+
+        analogWrite(ledPin, brightness);  // Set LED brightness using PWM
+        delay(a);  // Adjust delay for speed of dimming
+        x = x + 1;
+    }
+ 
+delay(b);
+
+
+}
